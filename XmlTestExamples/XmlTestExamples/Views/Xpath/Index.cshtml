@@ -1,0 +1,56 @@
+﻿@model XmlTestExamples.Models.XpathModel
+@{
+    ViewBag.Title = "Working with XML";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Milepæl 5</h3>
+        <p>"Eleven kender muligheder og opbygning af Xpath."</p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Elementer</h3>
+        <p>XPath har 7 forskellige slags nodes:</p>
+        <ul>
+            <li>Element</li>
+            <li>Attribute</li>
+            <li>Text</li>
+            <li>Namespace</li>
+            <li>Processing-instruction</li>
+            <li>Comment</li>
+            <li>Document</li>
+            <li><a href="http://www.w3schools.com/xpath/xpath_nodes.asp">Læs mere på W3Schools</a></li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h3>Test xpath expression</h3>
+        <p>Se dokumentet der afvikles på <a href="~/Content/XmlXpath/Books.xml">her</a></p>
+        <p>Eksempler:</p>
+        <ul>
+            <li>/bookstore/book/title</li>
+            <li>/bookstore/book/author</li>
+            <li>/bookstore/book[2]/title</li>
+        </ul>
+
+        @using (Ajax.BeginForm("SelectNode", "Xpath", null, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            OnSuccess = "xPath.Result"
+
+        }))
+        {
+            <div class="col-md-12">
+                <span>Xpath expression</span><br />
+                <input type="text" name="xpath" id="expression" />
+            </div>
+            <div class="col-md-12">
+                <input type="submit" value="Kør xpath expression" />
+            </div>
+        }
+    </div>
+</div>

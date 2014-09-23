@@ -1,0 +1,74 @@
+﻿@model XmlTestExamples.Models.DevelopXmlModel
+@{
+    ViewBag.Title = "Working with XML";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Milepæl 2 / 3</h1>
+        <p>"Eleven kan udvikle, konstruere og dokumentere en standard baseret XML."</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Opret en ny bruger</h3>
+                </div>
+            </div>
+            <div class="row">
+                @using (Html.BeginForm("Create", "DevelopXml", null, FormMethod.Post, new { @id = "Form-Id" }))
+                {
+                    <div class="col-md-12">
+                        @Html.DisplayNameFor(x => x.CreateUserForm.Name)<br />
+                        @Html.TextBoxFor(x => x.CreateUserForm.Name)
+                    </div>
+                    <div class="col-md-12">
+                        @Html.DisplayNameFor(x => x.CreateUserForm.Title)<br />
+                        @Html.TextBoxFor(x => x.CreateUserForm.Title)
+                    </div>
+                    <div class="col-md-12">
+                        @if (Model.Users != null && Model.Users.UserList != null && Model.Users.UserList.Any())
+                        {
+                            <h3>Relaterede brugere</h3>
+                            @Html.DisplayFor(x => x.Users, "UserCheckboxes")
+                        }
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Opret" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        @if(Model.Users != null && Model.Users.UserList != null && Model.Users.UserList.Any())
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Slet en bruger</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    @using (Html.BeginForm("Delete", "DevelopXml", null, FormMethod.Post, new { @id = "Form-Id" }))
+                    {
+                        <div class="col-md-12">
+                        
+                            @if (Model.Users != null && Model.Users.UserList != null && Model.Users.UserList.Any())
+                            {
+                                <h3>Vælg en eller flere brugere at slette</h3>
+                                @Html.DisplayFor(x => x.Users, "UserCheckboxes")
+                            }
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" value="Slet" />
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

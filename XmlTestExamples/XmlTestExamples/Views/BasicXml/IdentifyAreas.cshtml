@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "IdentifyAreas";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Milepæl 1</h1>
+        <p>"Eleven kan identificere områder hvor en standard baseret XML vil være hensigtsmæssig."</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>XMl beskriver og lagrer data</h3>
+        <p>XML står for Extensible Markup Language. XML gør i sig selv ikke noget - det er ikke et kodesprog. XML er en universelt accepteret standard til at beskrive/lagre data.</p>
+        <p>XML bliver ofte brugt i situationer hvor der ikke er en decideret database til rådighed, f.eks. i en offline mode. Et eksempel er SONY's Smartband, hvor de nævner
+         at den kan opsamle data selv om telefonen ikke er i nærheden - man kunne forestille sig, at den gemmer det opsamlede data i en XML fil, og derefter synkroniserer med telefonen
+         når den kommer indenfor rækkevidde.</p>
+    </div>
+    <div class="col-md-8">
+        <h3>CMS</h3>
+        <p>XML bliver i høj grad brugt til web. Et eksempel er diverse CMS'er (Content Management Systems) hvor en bruger har et backend-interface til at editere data.</p>
+        <p>Når en bruger f.eks. indtaster brødtekst i et felt, vil dette data blive gemt i en database. Når en bruger derimod vælger at publisere dette data, vil de fleste gode CMS'er
+         generere et XML ark med dette data, så der ikke skal laves et database opslag hver gang en bruger besøger sitet. Bindeleddet mellem XML'en og HTML'en som fremvises for brugeren foregår
+         via en "view-engine" så som XSLT eller Microsoft's Razor View Engine.</p>
+        <img src="~/Content/Images/CMS xml.png"/>
+    </div>
+    <div class="col-md-8">
+        <h3>Webservices</h3>
+        <p>XML bliver også i høj grad brugt til webservices, hvor et system stiller nogle metoder til rådighed til andre systemer over nettet. Ved at bruge XML, er det fuldstændig
+         underordnet hvilke kodesprog de forskellige systemer bruger - vi er kun interesseret i det data der kommer tilbage fra metodekaldet. Ved at blive enige om at bruge et XSD skema kan
+         vi sørge for at alle parter er enige om hvordan data'en skal se ud. Herefter kan vi bruge libraries så som XmlSerializer i namespacet: System.Xml.Serialization, til at serialize og deserialize XML'en så
+         vi har nogle strongly-typed objekter at arbejde med.</p>
+    </div>
+</div>

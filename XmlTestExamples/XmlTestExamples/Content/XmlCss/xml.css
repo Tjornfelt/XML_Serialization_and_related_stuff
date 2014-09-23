@@ -1,0 +1,14 @@
+﻿* {
+    display: block;
+}
+
+Users {
+    background: #f0f0f0;
+}
+
+Id {
+    color: red;
+}
+Name {
+    font-size: 26pt;
+}

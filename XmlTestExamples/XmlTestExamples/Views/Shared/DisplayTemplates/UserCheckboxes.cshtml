@@ -1,0 +1,9 @@
+﻿@model XmlTestExamples.Models.Users
+
+@foreach (var user in Model.UserList)
+{
+    
+    <input type="checkbox" name="relatedUsers" value="@user.Id" />
+    <span>Id: @user.Id, Navn: @user.Name, Titel: @user.Title</span>
+    <br />
+}

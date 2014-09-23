@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="/Content/XmlCss/xml.css"?>
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Id>2</Id>
+    <Name>Mads Tjørnfelt</Name>
+    <Titel>Programmør</Titel>
+  </User>
+  <User>
+    <Id>3</Id>
+    <Name>Christian Andersen</Name>
+    <Titel>Programmør</Titel>
+  </User>
+  <User>
+    <Id>4</Id>
+    <Name>Peter Baun</Name>
+    <Titel>Lærer</Titel>
+  </User>
+</Users>
