@@ -24,9 +24,25 @@ namespace XmlTestExamples.Controllers
             //http://www.codedigest.com/Articles/ASPNET/342_Using_XPath_Expression_to_Access_or_Read_XML_document_in_ASPNet.aspx
 
             XmlDocument xmldoc = new XmlDocument();
-            //xmldoc.Load(@"~/Content/XmlXpath/Books.xml");
             xmldoc.Load(Server.MapPath("~/Content/XmlXpath/Books.xml"));
-            string result = xmldoc.SelectSingleNode(xpath).InnerText;
+            string result = string.Empty;
+
+            //Quick and dirty naming convention to switch from select single and select many
+            if (!xpath.Contains("sm:"))
+            {
+                result = xmldoc.SelectSingleNode(xpath).InnerText; 
+            }
+            else
+            {
+                var test = xpath.Split(':');
+
+                var nodes = xmldoc.SelectNodes(test[1]);
+
+                foreach (XmlNode node in nodes)
+	            {
+		            result += node.InnerText + "\n";
+	            }
+            }
             return result;
         }
     }

@@ -32,9 +32,14 @@
         <p>Se dokumentet der afvikles på <a href="~/Content/XmlXpath/Books.xml">her</a></p>
         <p>Eksempler:</p>
         <ul>
-            <li>/bookstore/book/title</li>
-            <li>/bookstore/book/author</li>
-            <li>/bookstore/book[2]/title</li>
+            <li><strong>Note: tilføj "sm:" før expression for "select many" (egen konvention!)</strong></li>
+            <li>Vælg titlen af første bog: /bookstore/book/title</li>
+            <li>Vælg forfatteren af første bog: /bookstore/book/author</li>
+            <li>Vælg titlen af anden bog: /bookstore/book[2]/title</li>
+            <li>Vælg første bog med årstal 2005 /bookstore/book[year=2005]/title</li>
+            <li>Vælg anden bog med årstal 2005 /bookstore/book[year=2005][2]/title</li>
+            <li>Vælg attribut data: /bookstore/book/&#64;category</li>
+            <li>Vælg alle bøger med kategori WEB /bookstore/book[&#64;category='WEB']/title</li>
         </ul>
 
         @using (Ajax.BeginForm("SelectNode", "Xpath", null, new AjaxOptions

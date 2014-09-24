@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "XSD Schema";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Milestone 7</h2>
+        <p>"Eleven kan dokumentere en XML standard ved hjælp af DTD og XSD Schema."</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Check XML og valider</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><a class="btn btn-default" href="~/Content/XSDexamples/notevalid.xml">Supposedly validated XML by the XML schema &raquo;</a></p>
+                    <p><a class="btn btn-default" href="~/Content/XSDexamples/noteerror.xml">XML invalidated by the XML schema &raquo;</a></p>
+                    @using (Ajax.BeginForm("ValidateXml", "XSDExamples", null, new AjaxOptions
+                    {
+                        HttpMethod = "GET",
+                        OnSuccess = "Validate.Result"
+
+                    }))
+                    {
+                        <input type="radio" name="validate" value="valid-schema" checked="checked" />
+                        <span>Test the supposedly valid schema</span>
+                        <br />
+                        
+                        <input type="radio" name="validate" value="invalid-schema" />
+                        <span>Test the supposedly invalid schema</span>
+                        <br />
+                        
+                        
+                        <input type="submit" value="Test validation!" />
+                        
+                    }
+
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

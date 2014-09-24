@@ -162,6 +162,8 @@
     <Compile Include="Controllers\DevelopXmlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\XpathController.cs" />
+    <Compile Include="Controllers\XSDExamplesController.cs" />
+    <Compile Include="Controllers\XsltExamplesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,12 +184,24 @@
     <Content Include="Content\XmlCss\xml.css" />
     <Content Include="Content\XmlCss\users.xml" />
     <Content Include="Content\XmlXpath\Books.xml" />
+    <Content Include="Content\XSDexamples\noteerror.xml" />
+    <Content Include="Content\XSDexamples\notevalid.xml" />
+    <Content Include="Content\XsltXml\embedded.css" />
+    <Content Include="Content\XsltXml\XsltTemplateTest.xml" />
+    <Content Include="Content\XsltXml\XsltTest.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\embeddedXslt.js" />
+    <Content Include="Scripts\XSD.js" />
+    <Content Include="Xslt\cdcatalog.xslt" />
+    <Content Include="Xslt\cdcatalogtemplates.xslt" />
+    <None Include="Content\XSDexamples\note.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -223,6 +237,9 @@
     <Content Include="Views\DevelopXml\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\UserCheckboxes.cshtml" />
     <Content Include="Views\Xpath\Index.cshtml" />
+    <Content Include="Views\XsltExamples\Index.cshtml" />
+    <Content Include="Views\XsltExamples\EmbeddedXslt.cshtml" />
+    <Content Include="Views\XSDExamples\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
