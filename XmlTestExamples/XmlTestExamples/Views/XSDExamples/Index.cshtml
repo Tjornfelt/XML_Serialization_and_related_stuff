@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3>Check XML og valider</h3>
+                    <h3>Check XML og valider (XSD)</h3>
                 </div>
             </div>
             <div class="row">
@@ -44,6 +44,38 @@
 
                     
                     
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Check XML og valider (DTD)</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><a class="btn btn-default" href="~/Content/DTDexamples/notevalid.xml">Supposedly validated XML by the XML schema &raquo;</a></p>
+                    <p><a class="btn btn-default" href="~/Content/DTDexamples/noteerror.xml">XML invalidated by the XML schema &raquo;</a></p>
+                    @using (Ajax.BeginForm("ValidateXmlDTD", "XSDExamples", null, new AjaxOptions
+                    {
+                        HttpMethod = "GET",
+                        OnSuccess = "Validate.Result"
+
+                    }))
+                    {
+                        <input type="radio" name="validate" value="valid-schema" checked="checked" />
+                        <span>Test the supposedly valid schema</span>
+                        <br />
+
+                        <input type="radio" name="validate" value="invalid-schema" />
+                        <span>Test the supposedly invalid schema</span>
+                        <br />
+
+                        <input type="submit" value="Test validation!" />
+                    }
                 </div>
             </div>
         </div>

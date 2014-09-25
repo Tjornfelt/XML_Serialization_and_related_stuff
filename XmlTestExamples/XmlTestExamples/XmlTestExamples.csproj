@@ -160,7 +160,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\BasicXmlController.cs" />
     <Compile Include="Controllers\DevelopXmlController.cs" />
+    <Compile Include="Controllers\DOMSAXController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OtherUsageController.cs" />
     <Compile Include="Controllers\XpathController.cs" />
     <Compile Include="Controllers\XSDExamplesController.cs" />
     <Compile Include="Controllers\XsltExamplesController.cs" />
@@ -179,6 +181,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DTDexamples\noteerror.xml" />
+    <Content Include="Content\DTDexamples\notevalid.xml" />
     <Content Include="Content\Images\bg.png" />
     <Content Include="Content\Images\CMS xml.png" />
     <Content Include="Content\XmlCss\xml.css" />
@@ -199,6 +203,7 @@
     <Content Include="Scripts\XSD.js" />
     <Content Include="Xslt\cdcatalog.xslt" />
     <Content Include="Xslt\cdcatalogtemplates.xslt" />
+    <Content Include="Content\DTDexamples\note.dtd" />
     <None Include="Content\XSDexamples\note.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -240,6 +245,8 @@
     <Content Include="Views\XsltExamples\Index.cshtml" />
     <Content Include="Views\XsltExamples\EmbeddedXslt.cshtml" />
     <Content Include="Views\XSDExamples\Index.cshtml" />
+    <Content Include="Views\DOMSAX\Index.cshtml" />
+    <Content Include="Views\OtherUsage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

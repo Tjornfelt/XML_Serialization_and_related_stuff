@@ -46,6 +46,42 @@ namespace XmlTestExamples.Controllers
             }
         }
 
+        public string ValidateXmlDTD(string validate)
+        {
+            //validate can be:
+            //valid-schema
+            //invalid-schema
+            // Create the XmlReader object.
+            XmlReader reader = null;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Parse;
+            settings.ValidationType = ValidationType.DTD;
+            settings.ValidationEventHandler += new ValidationEventHandler (ValidationEventHandler);
+
+            if (validate == "valid-schema")
+            {
+                reader = XmlReader.Create(Server.MapPath("~/Content/DTDexamples/notevalid.xml"), settings);
+            }
+            else if (validate == "invalid-schema")
+            {
+                reader = XmlReader.Create(Server.MapPath("~/Content/DTDexamples/noteerror.xml"), settings);
+            }
+            
+
+            try
+            {
+                // Parse the file. 
+                while (reader.Read()) ;
+                // xmlDoc.Load(reader); //Note that XmlDocument will FAIL when trying to parse the XML which contains a DTD declaration - my guess is that it is simply
+                // not supported anymore - the good old XmlReader, however, just crawls through the document 
+                return "Xml successfuldt valideret op mod DTD skemaet!";
+            }
+            catch (XmlSchemaValidationException ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public void ValidationEventHandler(object sender, ValidationEventArgs e)
         {
             switch (e.Severity)

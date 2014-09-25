@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "XSD Schema";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Milepæl 9</h2>
+        <p>"Eleven får kendskab til andre anvendelser af XML i f.eks. SOAP, WSD og logfiler."</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>SOAP - Simple Object Access Protocol</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>SOAP er en standardiseret struktur til at sende data over f.eks. http og smtp protokollerne. Meget ofte benyttet i Webservice kald.</p>
+                    <p>SOAP strukturen er som følgende (kilde: wikipedia)</p>
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SOAP.svg/220px-SOAP.svg.png">
+                    <table class="wikitable">
+                        <tbody>
+                            <tr>
+                                <th>Element</th>
+                                <th>Description</th>
+                                <th>Required</th>
+                            </tr>
+                            <tr>
+                                <td>Envelope</td>
+                                <td>Identifies the XML document as a SOAP message.</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Header</td>
+                                <td>Contains header information.</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td>Contains call, and response information.</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Fault</td>
+                                <td>Provides information about errors that occurred while processing the message.</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>SOAP kan kun benytte XML til dataoverførsel - i modsætning til REST, som kan bruge alt muligt: XML, JSON, Almindelig text, og andet.</p>
+                    <p>Til gengæld er SOAP ikke begrænset til http, som REST er.</p>
+                    <a href="http://blog.smartbear.com/apis/understanding-soap-and-rest-basics/">Kilde</a></div>
+            </div>
+        </div>
+    </div> 
+    <div class="col-md-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Dont use SOAP - use REST!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>REST står for Representational State Transfer, og er den vi i almindelighed benytter til vores webrequests, kendetegnet ved: GET, POST, PUT, and DELETE requests</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Xml Logging</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        XML egner sig godt til logging, da det er let-læseligt for mennesker. Man kan enten åbne dokumentet direkte og finde fejlen enten ud fra et fejl-id, timestamp, eller andet
+                    </p>
+                    <p>
+                        Alternativt kan der let laves en XSLT der transformerer log-beskeden, evt. via et interface hvor man udvælger den specifikke fejl man vil undersøge. Hvis man bruger en almindelig tekst fil til logging af 
+                        data kan log-filen hurtigt blive uoverskuelig - hvis man dog har en log der opsamler ALT kan det være et problem at oprette xml-elementer til alle tingene, så til en global log kan det være en god ide bare
+                        at dumpe det som ren tekst i en fil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "XSD Schema";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Milepæl 8</h2>
+        <p>"Eleven kan anvende XML i programmeringssammenhæng ved hjælp af DOM og SAX."</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>DOM - Document Object Model</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>DOM beskriver metoden, hvor man indlæser hele XML dokumentet, og arbejder med det i en træstruktur. Hvert element bliver i denne metode
+                    kaldt for en "node". Opbygningen af træstrukturen er som følgende (eksempel fra w3schools).
+                    </p>
+                    
+                    <img src="http://www.w3schools.com/dom/nodetree.gif"></div>
+
+                    <h2>Eksempler på XML DOM:</h2>
+                    <ul>
+                        <li>Xpath er et eksempel på at navigere XML DOM'en</li>
+                        <li>Objektet XmlDocument opbygger et XML DOM objekt, hvor hele arket er indlæst i ram, og der bruges indbyggede metoder til at udvælge children, siblings osv ud fra træstrukturen ovenfor.</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>SAX - Simple Api for Xml</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>SAX beskriver metoden, hvor man kun indlæser en lille del af xml dokumentet ad gangen. Dette er en fordel i applikationer hvor memory er begrænset,
+                    og/eller hvor man arbejder med meget store XML filer.</p>
+                    
+                    <p>
+                    XmlReader objektet er et eksempel på en SAX parser, og med XmlReader.Read() kan vi læse et element ad gangen,
+                    og beslutte os hvad vi vil gøre med det.
+                    </p>
+                    <p>Læs mere <a href="http://en.wikipedia.org/wiki/Simple_API_for_XML">her</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
